@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PeopleFlow | Employee Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+  <section id="authView" class="auth-shell hidden">
+    <div class="auth-art"><div class="brand-mark">P</div><p class="eyebrow">PEOPLEFLOW HR</p><h1>Build a better<br>workplace.</h1><p>One simple space to manage your people, culture and growth.</p><div class="auth-orb"></div></div>
+    <div class="auth-panel"><div class="auth-form-wrap"><div class="brand mobile-brand"><span class="brand-mark small">P</span> PeopleFlow</div><p class="eyebrow" id="authEyebrow">WELCOME BACK</p><h2 id="authTitle">Sign in to your workspace</h2><p class="muted" id="authSubtitle">Enter your details to continue.</p>
+      <form id="authForm"><label id="nameField" class="hidden">Full name<input name="name" autocomplete="name" placeholder="Your name"></label><label>Email address<input name="email" type="email" required autocomplete="email" placeholder="you@company.com"></label><label>Password<input name="password" type="password" required minlength="8" autocomplete="current-password" placeholder="At least 8 characters"></label><button class="btn primary full" id="authSubmit">Sign in</button></form>
+      <p class="auth-switch" id="authSwitch">New to PeopleFlow? <button class="link-btn" id="authToggle">Create an account</button></p>
+      <p class="tiny muted">First account created becomes the administrator.</p>
+    </div></div>
+  </section>
+
+  <div id="appView" class="app hidden">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">P</span><span>peopleflow</span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav>
+        <button class="nav-item active" data-page="dashboard"><span>◫</span> Overview</button>
+        <button class="nav-item" data-page="employees"><span>♙</span> Employees</button>
+        <button class="nav-item" data-page="departments"><span>▦</span> Departments</button>
+        <div class="workspace-label nav-spacer">PEOPLE OPERATIONS</div>
+        <button class="nav-item" data-page="attendance"><span>◷</span> Attendance</button>
+        <button class="nav-item" data-page="leaves"><span>▤</span> Leave requests <i id="leaveBadge" class="nav-badge hidden">0</i></button>
+        <button class="nav-item" data-page="payroll"><span>＄</span> Payroll</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="help-card"><div class="help-icon">✦</div><strong>Need a hand?</strong><p>Keep your people operations running smoothly.</p><a href="mailto:support@example.com">Contact support ↗</a></div><button class="nav-item" id="themeToggle"><span>☼</span> Toggle appearance</button><button class="nav-item" id="logoutBtn"><span>↪</span> Sign out</button></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><button class="icon-btn mobile-menu" id="menuToggle">☰</button><div class="breadcrumbs">Workspace <span>/</span> <strong id="crumb">Overview</strong></div><div class="top-actions"><span class="today" id="todayText"></span><button class="icon-btn" id="notificationBtn" title="Notifications">♧<i class="notification-dot"></i></button><div class="user-chip"><div class="avatar" id="userAvatar">A</div><div><strong id="userName">Admin</strong><small id="userRole">Administrator</small></div></div></div></header>
+      <div class="content" id="pageContent"></div>
+    </main>
+  </div>
+  <div id="modalRoot"></div>
+  <script src="/js/app.js"></script>
+</body></html>

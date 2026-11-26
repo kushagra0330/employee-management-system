@@ -1,0 +1,27 @@
+PEOPLEFLOW - WINDOWS QUICK START
+
+1. Install Node.js LTS (18+) from https://nodejs.org/.
+2. Install MongoDB Community Server and make sure its Windows service is running,
+   OR create a MongoDB Atlas database and put its connection string in .env.
+3. Extract this ZIP. Open the employee-management-system folder.
+4. Double-click run-windows.bat.
+   - First run installs npm dependencies (internet required).
+   - It creates .env from .env.example if .env does not exist.
+   - Edit .env before use if you need Atlas or a custom JWT_SECRET.
+5. Keep the black terminal window open. The browser opens at:
+   http://localhost:5000
+
+MANUAL START (VS CODE TERMINAL)
+  cd employee-management-system
+  npm install
+  copy .env.example .env
+  (edit .env; configure MONGODB_URI and JWT_SECRET)
+  npm run dev
+Then visit http://localhost:5000.
+
+IMPORTANT
+- Do not open frontend/index.html directly or use VS Code Live Server.
+- Local MongoDB default URI: mongodb://127.0.0.1:27017/employee_management
+- For Atlas, use your own mongodb+srv connection string in MONGODB_URI.
+- If port 5000 is busy, change PORT in .env and visit that port.
+- Keep the terminal running; closing it stops localhost.
